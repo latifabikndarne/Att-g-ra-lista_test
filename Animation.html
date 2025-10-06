@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<title> Att göra lista_test</title>
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<style>
+  .bounce-in {
+    opacity: 0;
+    transform: translateY(-200px);
+    animation: bounceDown 1.2s ease-in-out forwards;
+  }
+
+  @keyframes bounceDown { 
+    0% {
+      opacity: 0;
+      transform: translateY(-200px);
+    }
+
+    60% {
+      opacity: 1;
+      transform: translateY(30px);
+      /* lite för långt ner */
+    }
+
+    80% {
+      transform: translateY(-10px);
+      /* studsa upp lite */
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      /* stanna */
+    }
+  }
+
+  #todolist {
+    opacity: 0;
+    transform: translateY(-600px);
+    animation: fadeSlideIn 6s ease forwards;
+  }
+
+  /* Animationens keyframes */
+  @keyframes fadeSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+
+    60% {
+      opacity: 1;
+      transform: translateY(5px);
+      /* lite för långt ner */
+    }
+
+    80% {
+      transform: translateY(-30px);
+      /* studsa upp lite */
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      /* stanna */
+    }
+
+  }
+
+  small{
+    color: red;
+    animation: blink 2s ease-in-out infinite; 
+    
+  }
+
+   @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+   .completed{
+     transition:color 1s ease, opacity 1s ease;
+    /*color: #aaa;  /* grå 
+      opacity: 0.6; */
+   }
+   
+  
+</style>
+
+<body>
+  <div class="bounce-in">
+    <h1> Latifas Todo List </h1>
+    <p id="completed"> </p>
+
+    <label for="inputTodo"> </label>
+    <input type="Text" id="inputTodo" placeholder="Ny uppgift">
+    <button type="button" id="addTodoButton"> OK </button>
+
+    <br>
+
+    <small> info text</small>
+
+    <ul id="todolist">
+
+
+    </ul>
+  </div>
+
+  <script src="script.js"> </script>
+</body>
+
+</html>
