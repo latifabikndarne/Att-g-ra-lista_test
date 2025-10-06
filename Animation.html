@@ -37,6 +37,24 @@
     }
   }
 
+ #inputTodo {
+  border: 1px solid rgb(148, 147, 147);
+  transition:
+  border-color 0.3s ease;
+  border-width: 0.3s ease;
+}
+
+#inputTodo:focus {
+  border-color: rgb(56, 9, 241);
+  border-width: 2px;
+  outline: none;
+}
+   
+  #addTodoButton:hover{
+    background-color : rgb(198, 192, 192);
+  }   
+
+  
   #todolist {
     opacity: 0;
     transform: translateY(-600px);
@@ -82,8 +100,7 @@
 
    .completed{
      transition:color 1s ease, opacity 1s ease;
-    /*color: #aaa;  /* grå 
-      opacity: 0.6; */
+    
    }
    
   
@@ -91,11 +108,11 @@
 
 <body>
   <div class="bounce-in">
-    <h1>  My Todo </h1>
-    <p id="completed"> </p>
+    <h1>  My ToDo </h1>
+    <p id="completed"> 0 completed </p>
 
     <label for="inputTodo"> </label>
-    <input type="Text" id="inputTodo" placeholder="Ny uppgift">
+    <input type="Text" id="inputTodo"> <!-- placeholder="Ny uppgift"-->
     <button type="button" id="addTodoButton"> OK </button>
 
     <br>

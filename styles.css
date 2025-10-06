@@ -23,7 +23,7 @@ body {
     width : 300px;
     height : 300px;
     text-align: center;
-    padding: 30px;
+    padding: 10px;
     margin-left : 70px;
     
    
@@ -32,26 +32,28 @@ body {
 h1 {
     color:black;
     font-size: xxx-large;
+    margin-top: 0px;
 }
 
 #inputTodo{
     background-color :white;
-    width : 250px;
+    width : 200px;
     height:20px;
-    border : 2px, solid, blue;
+    border : 0.1px, solid, rgb(148, 147, 147);
     border-radius: 1px;
     font-size: 15px; 
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
     
 } 
-#todolist {
+#todolist { 
+  
   color: black;
   list-style-type: none;
   font-size: 20px; 
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 #addTodoButton {
-    background-color: white;
+    background-color: hwb(0 92% 7%);
     color : black;
     font-size: 18px; 
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
@@ -62,10 +64,9 @@ h1 {
 
 .completed {
     text-decoration: line-through;
-    color: lightgray;   
+    color: rgb(125, 123, 123);   
     font-size: 20px; 
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-
 }
 
 .trashcan{
@@ -75,5 +76,6 @@ h1 {
 }
 small {
   color: red;
+  font-style:italic;
 
 }

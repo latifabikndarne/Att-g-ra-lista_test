@@ -9,7 +9,7 @@ const todolist = document.querySelector("#todolist");
 let completed = 0;
 let todoText = "";
 let text = inputTodo.value;
-infoTextElement.textContent= " ";
+infoTextElement.textContent = " ";
 
 
 addTodoButton.addEventListener("click", addToDo);
@@ -18,9 +18,10 @@ function addToDo() {
     todoText = inputTodo.value;
 
     if (todoText == 0) {
-        infoTextElement.textContent = "Skriv en uppgift!";
+        infoTextElement.textContent = "Input must not be empty";
         return;
-    }
+        }
+    
     const item = document.createElement("li");
     todolist.appendChild(item);
    
@@ -32,6 +33,7 @@ itemText.innerText = todoText;
 //EventListener för varje item
 
 itemText.addEventListener("click",
+    
     function () {
 
         if (itemText.getAttribute("class") == "completed") {
@@ -42,11 +44,11 @@ itemText.addEventListener("click",
         } else {
             itemText.setAttribute("class", "completed");
             completed++;
-            completedElement.innerText = "Utförda uppgifter: " + completed;
+            completedElement.innerText = completed + " completed";
         }
-      
+     
     });
- 
+         infoTextElement.textContent = " ";
       item.appendChild(itemText);
     
 
@@ -62,7 +64,6 @@ itemText.addEventListener("click",
         todolist.removeChild(item);
 
        }); 
-    
   
     inputTodo.value = "";
 } 
