@@ -8,31 +8,27 @@
 </head>
 <style>
   .falling {
-    opacity: 0;
     transform: translateY(-100px);
     animation:
     bounceDown 1.2s ease-in-out forwards;
-   /*content-visibilit 1s ease-in forwards;*/
-  }
 
+  }
+    
   @keyframes bounceDown { 
     0% {
-      opacity: 0;
+      
       transform: translateY(-200px);
     }
     60% {
-      opacity: 1;
+      
       transform: translateY(30px);
       /* lite för långt ner */
     }
-
     80% {
       transform: translateY(-10px);
       /* studsa upp lite */
-    }
-
+        }
     100% {
-      opacity: 1;
       transform: translateY(0);
       /* stanna */
     }
@@ -55,53 +51,41 @@
     background-color : rgb(198, 192, 192);
   }   
 
-  
   #todolist {
-    opacity: 0;
     transform: translateY(-600px);
-    animation: fadeSlideIn 6s ease forwards;
+    animation: find-in 8s ease-in forwards;
   }
 
   /* Animationens keyframes */
-  @keyframes fadeSlideIn {
+  @keyframes find-in {
     0% {
-      opacity: 0;
-      transform: translateY(-50px);
+      transform: translateY(-100px);
     }
-
-    60% {
-      opacity: 1;
-      transform: translateY(5px);
+    60% { 
+      transform: translateY(0px);
       /* lite för långt ner */
     }
-
     80% {
-      transform: translateY(-30px);
+      transform: translateY(10px);
       /* studsa upp lite */
     }
-
-    100% {
-      opacity: 1;
+    100% { 
       transform: translateY(0);
       /* stanna */
     }
-
   }
 
   small{
     color: red;
     animation: blink 2s ease-in-out infinite; 
-    
   }
-
    @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
   }
 
    .completed{
-     transition:color 1s ease, opacity 1s ease;
-    
+     transition:color 1s ease, opacity 1s ease;  
    }
    
   
