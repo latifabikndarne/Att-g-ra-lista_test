@@ -7,95 +7,158 @@
 
 </head>
 <style>
-  
+  body {
+    background: linear-gradient(#fbcfcf, #fb9898) no-repeat;
+    background-size: 100% 400%;
+  }
+
+  h1 {
+    color: black;
+    font-size: xxx-large;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  .falling-box {
+    background-color: white;
+    width: 400px;
+    min-height: 250px;
+    text-align: center;
+    margin-left: 40%;
+
+  }
 
   .falling-box {
     transform: translateY(-100px);
     animation:
-    bounceDown 1.2s ease-in-out forwards;
-
+      bounceDown 1.2s ease-in-out forwards;
   }
-    
-  @keyframes bounceDown { 
+
+  @keyframes bounceDown {
     0% {
-      
       transform: translateY(-200px);
     }
+
     60% {
-      
       transform: translateY(30px);
       /* lite för långt ner */
     }
+
     80% {
       transform: translateY(-10px);
       /* studsa upp lite */
-        }
+    }
+
     100% {
       transform: translateY(0);
       /* stanna */
     }
   }
 
- #inputTodo {
-  border: 1px solid rgb(148, 147, 147);
-  transition:
-  border-color 0.3s ease;
-  border-width: 0.3s ease;
-}
+  #inputTodo {
+    background-color: white;
+    width: 200px;
+    height: 25px;
+    border: 0.1px, solid, rgb(148, 147, 147);
+    border-radius: 1px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition:
+    border-color 0.3s ease;
+    border-width: 0.3s ease;
+  }
 
-#inputTodo:focus {
-  border-color: rgb(56, 9, 241);
-  border-width: 2px;
-  outline: none;
-}
-   
-  #addTodoButton:hover{
-    background-color : rgb(198, 192, 192);
-  }   
+  #inputTodo:focus {
+    border-color: rgb(56, 9, 241);
+    border-width: 2px;
+    outline: none;
+  }
+
+  #addTodoButton {
+    background-color: hwb(0 92% 7%);
+    color: black;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 45px;
+    height: 30px;
+    border: 1px, solid, rgb(148, 147, 147);
+    border-radius: 1px;
+  }
+
+  #addTodoButton:hover {
+    background-color: rgb(208, 206, 206);
+  }
 
   #todolist {
-    transform: translateY(-600px);
-    animation: find-in 8s ease-in forwards;
+    color: black;
+    list-style-type: none;
+    font-size: 25px;
+    padding-bottom: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    transform: translateY(-500px);
+    animation: fade-in 5s ease-in forwards;
   }
 
   /* Animationens keyframes */
-  @keyframes find-in {
+  @keyframes fade-in {
     0% {
-      transform: translateY(-100px);
+      transform: translateY(-50px);
     }
-    60% { 
+
+    60% {
       transform: translateY(0px);
       /* lite för långt ner */
     }
+
     80% {
-      transform: translateY(10px);
+      transform: translateY(20px);
       /* studsa upp lite */
     }
-    100% { 
+
+    100% {
       transform: translateY(0);
       /* stanna */
     }
   }
 
-  small{
+  small {
     color: red;
-    animation: blink 2s ease-in-out infinite; 
-  }
-   @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+    font-style: italic;
+    animation: blink 2s ease-in-out infinite;
   }
 
-   .completed{
-     transition:color 1s ease, opacity 1s ease;  
-   }
-   
-  
+  @keyframes blink {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .completed {
+    text-decoration: line-through;
+    color: rgb(125, 123, 123);
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition:
+    color 1s ease, opacity 1s ease;
+  }
+
+  .trashcan {
+    font-size: large;
+    margin-left: 10px;
+    color: #252424;
+  }
 </style>
 
 <body>
   <div class="falling-box">
-    <h1>  My ToDo </h1>
+    <h1> My ToDo </h1>
     <p id="completed"> 0 completed </p>
 
     <label for="inputTodo"> </label>
@@ -107,7 +170,6 @@
     <small> info text</small>
 
     <ul id="todolist">
-
 
     </ul>
   </div>
