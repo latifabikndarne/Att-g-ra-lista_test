@@ -20,40 +20,46 @@
   }
 
   .falling-box {
-    background-color: white;
-    width: 400px;
-    min-height: 220px;
-    text-align: center;
-    margin-left: 40%;
+  background-color: white;
+  width: 400px;
+  min-height: 220px;
+  text-align: center;
+  margin-left: 40%;
+  transform: translateY(-100px);
+  animation: bounceDown 1.2s ease-in-out forwards;
+  position: relative;
+}
 
+/* Innehållet är först osynligt */
+.falling-box .content {
+  opacity: 0;
+
+  transition: opacity 0.2s ease-in;
+
+  animation: showContent 1s ease-in forwards;
+  animation-delay: 1s; /* visas efter fallanimationen */
+}
+
+@keyframes bounceDown {
+  0% {
+    transform: translateY(-200px);
   }
-
-  .falling-box {
-    transform: translateY(-100px);
-    animation:
-      bounceDown 1.2s ease-in-out forwards;
+  60% {
+    transform: translateY(30px);
   }
-
-  @keyframes bounceDown {
-    0% {
-      transform: translateY(-200px);
-    }
-
-    60% {
-      transform: translateY(30px);
-      /* lite för långt ner */
-    }
-
-    80% {
-      transform: translateY(-10px);
-      /* studsa upp lite */
-    }
-
-    100% {
-      transform: translateY(0);
-      /* stanna */
-    }
+  80% {
+    transform: translateY(-10px);
   }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes showContent {
+  to {
+    opacity: 1;
+  }
+}
 
   #inputTodo {
     background-color: white;
@@ -159,7 +165,8 @@
 
 <body>
   <div class="falling-box">
-    <h1> My ToDo </h1>
+  <div class="content">
+      <h1> My ToDo </h1>
     <p id="completed"> 0 completed </p>
 
     <label for="inputTodo"> </label>
@@ -173,6 +180,7 @@
     <ul id="todolist">
 
     </ul>
+    </div>
   </div>
 
   <script src="script.js"> </script>
